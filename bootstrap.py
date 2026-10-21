@@ -19,7 +19,7 @@ def main():
     if not env_python.exists():
         subprocess.run([sys.executable, '-m', 'venv', str(ROOT / '.venv')], check=True)
     probe = subprocess.run([str(env_python), '-c',
-        "import importlib.metadata as m; assert m.version('streamlit') == '1.59.0'; assert m.version('numpy') == '2.5.4'"],
+        "import importlib.metadata as m; assert m.version('streamlit') == '1.66.0'; assert m.version('numpy') == '2.5.4'"],
         capture_output=True)
     if probe.returncode:
         subprocess.run([str(env_python), '-m', 'pip', 'install', '-r', str(ROOT / 'requirements.txt')], check=True)

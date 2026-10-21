@@ -71,7 +71,7 @@ python tools/import_mnist28.py /path/to/weights_biases.npz
 
 ## 验证与文件
 
-运行应用只依赖 Streamlit 和 NumPy。开发验证另安装 pytest；JavaScript 检查使用 Node.js，无需安装前端依赖。
+运行应用固定使用 Streamlit 1.66.0 和 NumPy 2.5.4。开发验证另安装 pytest；JavaScript 检查使用 Node.js，无需安装前端依赖。
 
 ```sh
 python -m pytest tests -q
