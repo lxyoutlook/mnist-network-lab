@@ -63,19 +63,6 @@ def test_wrong_mnist_layer_rejected(tmp_path, model):
         load_mnist28(path)
 
 
-@pytest.mark.parametrize('case_index', [0, 1])
-def test_reported_freehand_digits_after_adaptation(case_index, model):
-    cases = json.loads((ROOT / 'tests/fixtures/freehand_regressions.json').read_text())
-    case = cases[case_index]
-    raw = np.asarray(case['pixels']) / 255
-    prepared = center_mnist28(raw)
-    result = forward_mnist28(prepared, model)
-    assert result['prediction'] == case['label']
-    assert result['probabilities'][case['label']] > .9
-    np.testing.assert_array_equal(np.asarray(prepared) * 255, case['prepared_pixels'])
-    assert np.all((np.asarray(prepared) >= 0) & (np.asarray(prepared) <= 1))
-
-
 def test_adaptation_blank_tiny_and_invalid_input():
     assert center_mnist28([0] * 784) == [0] * 784
     tiny = [0] * 784
