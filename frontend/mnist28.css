@@ -1,0 +1,26 @@
+.mnist28-workspace{display:grid;gap:18px}
+.mnist28-input-body{display:grid;grid-template-columns:minmax(280px,480px) minmax(220px,1fr);gap:26px;max-width:1180px;margin:auto;align-items:start}
+.mnist28-board{display:grid;grid-template-columns:repeat(28,1fr);gap:1px;aspect-ratio:1;background:#dde4ef;border:1px solid #d6deeb;border-radius:6px;overflow:hidden;touch-action:none;user-select:none}
+.mnist28-board .pixel{min-width:0;padding:0}
+.mnist28-row{display:contents}
+.mnist28-controls>p.muted{font-size:12px;margin-top:7px}
+.mnist28-controls .tools{width:100%;margin:16px 0 12px}
+.mnist28-controls .prediction{margin-top:14px}
+.mnist28-slider{display:flex;gap:9px;align-items:center;font-size:12px;color:var(--muted);margin:10px 0}
+.mnist28-slider input{min-width:60px;flex:1;accent-color:var(--blue)}
+.mnist28-slider span{width:55px;text-align:right;font-variant-numeric:tabular-nums}
+.mnist28-score{font-size:12px;color:var(--muted);margin:-5px 0 8px;line-height:1.8}
+.mnist28-workspace .flow-panel .panel-head{margin-bottom:8px}
+.mnist28-score b{color:#244bb6}.mnist28-score a{color:#244bb6;margin-left:6px}
+#mnist28-network{width:100%;min-width:680px;max-height:360px;display:block}
+#mnist28-network text{font-family:"Segoe UI","Microsoft YaHei",sans-serif;fill:var(--ink);font-size:12px}
+#mnist28-network .layer-title{font-size:18px;font-weight:650}
+#mnist28-network .layer-note{font-size:12px;fill:var(--muted)}
+#mnist28-network .layer-box{fill:#f9fbff;stroke:#dce4f1}
+#mnist28-network .mnist28-node-label{font:7.5px Consolas,monospace;pointer-events:none}
+#mnist28-network .mnist28-node-label.active{fill:white}
+#mnist28-network .node:focus-visible{outline:none}
+#mnist28-network .node:focus-visible>rect{stroke:#244bb6;stroke-width:2}
+.mnist28-selection{display:flex;gap:15px;flex-wrap:wrap;margin:6px 0;font-size:12px;color:var(--muted)}
+.mnist28-selection select{font-size:12px;padding:4px 6px;margin-left:5px}
+@media(max-width:680px){.mnist28-input-body{grid-template-columns:1fr}.mnist28-controls{grid-row:1}.mnist28-drawing{max-width:560px;width:100%;margin:auto}}

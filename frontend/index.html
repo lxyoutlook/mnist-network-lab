@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>手写数字神经网络</title>
+  <link rel="stylesheet" href="style.css?v=17">
+  <link rel="stylesheet" href="lesson.css?v=17">
+  <link rel="stylesheet" href="matrix-view.css?v=17">
+  <link rel="stylesheet" href="network-diagram.css?v=17">
+  <link rel="stylesheet" href="demo-tabs.css?v=17">
+  <link rel="stylesheet" href="mnist28.css?v=17">
+</head>
+<body>
+<main id="lab" aria-label="手写数字神经网络交互实验室">
+  <div class="demo-tabs" role="tablist" aria-label="演示模式">
+    <button type="button" id="tab-full" role="tab" aria-selected="true" aria-controls="demo-content">小画板演示 · 12×12</button>
+    <button type="button" id="tab-large" role="tab" aria-selected="false" aria-controls="demo-content" tabindex="-1">大画板演示 · 28×28</button>
+  </div>
+  <div id="demo-content" role="tabpanel" aria-labelledby="tab-full">
+  <div class="workspace" id="excel-workspace">
+    <section class="panel input-panel" aria-labelledby="board-title">
+      <div class="eyebrow">01 / 输入</div>
+      <h2 id="board-title">从一笔开始</h2>
+      <p class="muted">在网格上拖动绘画，实时观察网络变化。</p>
+      <div class="tools" role="group" aria-label="绘画工具">
+        <button id="pen" class="selected" aria-pressed="true">画笔</button>
+        <button id="eraser" aria-pressed="false">橡皮</button>
+        <button id="undo">撤销</button>
+        <button id="clear">清空</button>
+      </div>
+      <div id="board" class="board" role="group" aria-label="12×12 手写画板"></div>
+      <div class="board-meta"><span>12 × 12 像素 · 0 / 1</span><span id="ink-count">0 个笔画像素</span></div>
+      <label class="sample-label" for="sample">载入教学笔画</label>
+      <select id="sample"><option value="">选择 0–9 示例…</option></select>
+      <div id="prediction" class="prediction" aria-live="polite"></div>
+      <p class="footnote">示例为人工绘制的教学笔画。模型沿用 Excel 参数，未重新训练；概率不代表准确率。</p>
+    </section>
+    <section class="panel flow-panel" aria-labelledby="flow-title">
+      <div class="panel-head"><div><div class="eyebrow">02 / 前向传播</div><h2 id="flow-title">看见每一层的计算</h2></div><span class="model-tag">144 → 128 → 10</span></div>
+      <div id="stages" class="stages" role="group" aria-label="计算阶段"></div>
+      <div class="playback">
+        <button id="play" class="primary">播放流程</button><button id="next">下一步</button><button id="restart">回到输入</button>
+        <label for="speed">速度</label><select id="speed"><option value="1800">慢</option><option value="950" selected>中</option><option value="450">快</option></select>
+      </div>
+      <div class="diagram-wrap"><svg id="network" viewBox="0 0 1000 400" role="group" aria-label="全连接神经网络：144个输入、一个含128个神经元的隐藏层、10个输出。可选择隐藏神经元和输出，追踪真实计算。"></svg></div>
+      <div class="legend"><span><i class="dot blue"></i>输入 / 激活强度</span><span><i class="line positive"></i>正权重</span><span><i class="line negative"></i>负权重</span><span>仅展开所选神经元的连接；全部节点都参与计算。</span></div>
+      <div id="stage-detail" class="stage-detail" aria-live="polite"></div>
+    </section>
+  </div>
+  <section id="mnist28-demo" hidden aria-label="28×28 MNIST 灰度模型演示"></section>
+  <section id="matrix-lesson" class="panel matrix-lesson" aria-labelledby="lesson-heading">
+    <div class="panel-head"><div><div class="eyebrow">03 / 从像素到分类，按顺序算一遍</div><h2 id="lesson-heading">一个向量，怎样变成一个数字</h2></div><span id="lesson-progress" class="model-tag">第 1 / 8 步</span></div>
+    <p class="lesson-intro">从 01 的同一幅画开始。每一步的输出，就是下一步的输入；蓝色标记沿着同一个分量传递。</p>
+    <nav id="lesson-steps" class="lesson-steps" aria-label="完整计算链"></nav>
+    <div class="lesson-controls"><button id="lesson-prev">上一步</button><button id="lesson-next" class="primary">下一步</button><button id="lesson-play">连续播放 8 步</button><label for="lesson-speed">每步停留</label><select id="lesson-speed"><option value="2500">2.5 秒</option><option value="4500" selected>4.5 秒</option><option value="7000">7 秒</option></select><span class="muted">也可直接点击任一步。</span></div>
+    <div id="lesson-equation" class="lesson-equation"></div>
+    <div id="lesson-explanation" class="lesson-explanation" aria-live="polite"></div>
+    <div id="lesson-content"></div>
+    <div id="lesson-handoff" class="lesson-handoff"></div>
+  </section>
+  <div id="status" class="status" role="status">正在加载 Excel 模型参数…</div>
+  </div>
+</main>
+<script src="network.js?v=17"></script><script src="matrix-view.js?v=18"></script><script src="lesson.js?v=17"></script><script src="mnist28-network.js?v=17"></script><script src="mnist28-lab.js?v=17"></script><script src="app.js?v=17"></script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+.matrix-lesson{margin-top:18px}
+.lesson-intro{color:var(--muted);font-size:13px;margin-bottom:18px}
+.lesson-steps{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:6px}
+.lesson-step{padding:9px 5px;font-size:12px;line-height:1.45;background:var(--light);border-color:transparent}
+.lesson-step small{display:block;font-size:10px;color:var(--muted);margin-top:3px}
+.lesson-step.current{background:var(--blue-light);border-color:#9bb0f0;color:#2949ab}
+.lesson-step.complete{background:#f0f6f2}
+.lesson-controls{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:16px 0 20px;font-size:12px}
+.lesson-controls button,.lesson-controls select{font-size:12px}
+.lesson-controls>label{margin-left:auto;color:var(--muted)}
+.lesson-controls>.muted{font-size:11px}
+.lesson-equation{display:flex;align-items:stretch;justify-content:center;gap:13px;flex-wrap:wrap;padding:18px;background:#f5f7fd;border-radius:9px}
+.tensor-token{display:flex;flex-direction:column;align-items:center;min-width:100px;gap:2px}
+.tensor-token b{font:600 23px/1.4 Georgia,"Times New Roman",serif;letter-spacing:.02em}
+.tensor-token span{font-size:12px;color:var(--muted)}
+.tensor-token em{font:12px/1.4 Consolas,monospace;color:#385bbf;background:#e8edfd;padding:2px 7px;border-radius:4px}
+.tensor-token.output{color:#2c50ba}
+.tensor-op{display:flex;align-items:center;font-size:24px;color:#72809b;padding:0 3px}
+.lesson-explanation{font-size:13px;margin:17px 0 20px;color:#405071}
+.lesson-explanation strong{color:var(--ink)}
+.lesson-handoff{margin-top:20px;padding:12px 15px;border-left:3px solid #7190e6;background:var(--light);font-size:12px;line-height:1.8}
+.lesson-handoff b{font-family:Consolas,monospace;color:#2c50ba}
+.lesson-vector-block{margin:14px 0;min-width:0}
+.lesson-vector-caption{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:12px;margin-bottom:7px}
+.lesson-vector-caption small{color:var(--muted);font-size:11px}
+.vector-strip{display:flex;gap:3px;overflow:auto;padding:5px 3px 8px;scrollbar-width:thin;scrollbar-color:#b5c2e1 #f2f4f9;border-left:2px solid #c6d0e5;border-right:2px solid #c6d0e5;max-width:100%;min-width:0}
+.vector-cell{flex:0 0 85px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:5px 4px;background:#f6f8fc;border:1px solid transparent;min-height:53px;gap:3px;border-radius:4px;font-variant-numeric:tabular-nums}
+.vector-cell small{font-size:10px;color:var(--muted)}
+.vector-cell strong{font:12px/1.4 Consolas,monospace;font-weight:500}
+.vector-cell.binary{flex-basis:40px}
+.vector-cell.binary strong{font-size:15px}
+.vector-cell.ink{background:#e6ecfc}
+.vector-cell.selected{border-color:#6a86dc;background:#eaf0ff;color:#284caa}
+.vector-cell.clipped{background:#fff3e9;color:#9f5e30}
+.vector-cell.selected.clipped{border-color:#d47b42}
+.flatten-layout{display:grid;grid-template-columns:300px minmax(0,1fr);gap:30px;align-items:start}
+.source-numeric{display:grid;grid-template-columns:24px repeat(12,minmax(0,1fr));gap:2px;width:300px;max-width:100%}
+.source-numeric .axis{display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:10px}
+.source-cell{padding:2px 0;border:1px solid transparent;background:#f1f4fa;border-radius:2px;min-width:0;aspect-ratio:1;font:11px/1 Consolas,monospace}
+.source-cell.ink{background:#4b638f;color:white}
+.source-cell.active-row{border-color:#a6b9ed}
+.source-cell.focus{outline:2px solid #3457be;outline-offset:0;background:#dae5ff;color:#203a7e}
+.flatten-detail{min-width:0}
+.mapping-example{margin:15px 0 12px;background:#edf2ff;border-radius:7px;padding:15px;font-size:16px;font-variant-numeric:tabular-nums;color:#2b4ba5}
+.mapping-example small{display:block;font-size:11px;margin-top:7px;color:var(--muted)}
+.row-order{font-size:12px;line-height:2.1;color:var(--muted);margin-top:12px}
+.row-order b{font-family:Consolas,monospace;color:var(--ink);font-weight:500}
+.inline-controls{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:12px;margin:12px 0}
+.inline-controls select,.inline-controls button{font-size:12px;padding:5px 9px}
+.inline-controls label{color:var(--muted)}
+.input-origin{font-size:11px;color:var(--muted);margin-bottom:8px}
+.matrix-workbench{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(290px,.9fr);gap:25px;margin:20px 0}
+.dot-calc{padding:15px;background:var(--light);border-radius:8px;min-width:0}
+.dot-calc h3{font-size:14px}
+.dot-big{font:14px/1.9 Consolas,monospace;overflow-wrap:anywhere;color:#2d4eae}
+.dot-calc .calculation-line{display:flex;justify-content:space-between;gap:12px;padding:6px 0;font-size:12px;border-bottom:1px solid #e7ecf5}
+.dot-calc .calculation-line b{font:13px/1.5 Consolas,monospace;white-space:nowrap;font-weight:500}
+.dot-calc input[type=range]{width:100%;accent-color:var(--blue);margin:10px 0}
+.dot-final{font-size:13px;color:#2d4eae;margin:13px 0 6px}
+.dot-final b{font-family:Consolas,monospace}
+.dot-note{font-size:11px;color:var(--muted);line-height:1.7}
+.element-check{padding:13px 16px;border-radius:7px;background:#f4f7fe;font-size:13px;line-height:1.9;margin:16px 0}
+.element-check b{font-family:Consolas,monospace;color:#2b4da9}
+.relu-counts{display:flex;gap:20px;flex-wrap:wrap;color:var(--muted);font-size:12px;margin:14px 0}
+.relu-counts strong{color:var(--ink)}
+.phase-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:15px 0}
+.phase-tabs button{font-size:12px}
+.softmax-common{display:flex;gap:24px;flex-wrap:wrap;font-size:13px;line-height:1.8;margin:16px 0}
+.softmax-common b{color:#294ba9;font-family:Consolas,monospace}
+.lesson-table-scroll{overflow:auto;max-width:100%}
+.lesson-table-scroll table{font-size:12px}
+.lesson-table-scroll th{position:static}
+.lesson-table-scroll .hidden-phase{color:#a3aec1}
+.lesson-table-scroll tr[data-digit]{cursor:pointer}
+.lesson-table-scroll tr[data-digit]:hover{background:#f3f6ff}
+.softmax-label{font-size:12px;color:var(--muted);margin-top:10px}
+.classify-summary{display:flex;gap:22px;align-items:center;flex-wrap:wrap;margin:20px 0;background:var(--light);border-radius:8px;padding:19px}
+.classify-number{font-size:45px;line-height:1.2;font-weight:600;color:#2c50ba}
+.classify-summary p{font-size:13px}
+.classify-summary .muted{font-size:12px;margin-top:6px}
+.class-bars{display:grid;gap:7px;max-width:900px}
+.class-bar-row{display:grid;grid-template-columns:75px 1fr 120px;gap:12px;align-items:center;font-size:12px}
+.class-bar-track{height:14px;background:#eef1f7;border-radius:3px;overflow:hidden}
+.class-bar-track i{display:block;height:100%;background:#a9b9e9}
+.class-bar-row.winner{color:#294cb2;font-weight:600}
+.class-bar-row.winner i{background:#3b61db}
+.class-bar-row .bar-prob{text-align:right;font:12px Consolas,monospace}
+.matrix-lesson [hidden]{display:none!important}
+@media(max-width:1080px){
+.lesson-steps{grid-template-columns:repeat(4,minmax(0,1fr))}
+.matrix-workbench{grid-template-columns:minmax(0,1fr)}
+.dot-calc{display:block}
+.flatten-layout{grid-template-columns:280px minmax(0,1fr)}
+.source-numeric{width:280px}
+}
+@media(max-width:640px){
+.lesson-steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+.lesson-equation{gap:5px;padding:12px 5px}
+.tensor-token{min-width:70px}
+.tensor-token b{font-size:20px}
+.tensor-token span{font-size:11px}
+.tensor-op{font-size:20px;padding:0}
+.flatten-layout{grid-template-columns:minmax(0,1fr);gap:15px}
+.source-numeric{width:300px}
+.lesson-controls>label{margin-left:0}
+.matrix-workbench{gap:13px}
+.class-bar-row{grid-template-columns:50px 1fr 90px;gap:8px}
+.softmax-common{gap:9px;flex-direction:column}
+.lesson-vector-caption{align-items:flex-start}
+.lesson-vector-caption small{max-width:145px}
+.matrix-lesson .lesson-explanation{font-size:12px}
+.tensor-token em{font-size:11px}
+}

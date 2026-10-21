@@ -1,0 +1,4 @@
+.demo-tabs{display:flex;gap:6px;border-bottom:1px solid var(--border);margin-bottom:18px}
+.demo-tabs [role=tab]{border:0;border-bottom:3px solid transparent;border-radius:7px 7px 0 0;padding:11px 20px;background:transparent;font-size:14px;color:var(--muted)}
+.demo-tabs [role=tab][aria-selected=true]{color:#2949a5;font-weight:650;border-bottom-color:var(--blue);background:var(--blue-light)}
+@media(max-width:640px){.demo-tabs [role=tab]{padding:10px 14px;font-size:13px}}
