@@ -4,7 +4,11 @@
 
 ## 启动
 
-Windows 安装 64 位 Python 3.12 或更新版本，解压完整目录后双击 `start_demo.cmd`。首次启动需要联网安装 `requirements.txt` 中的依赖；启动后保持窗口开启。
+Windows 安装 **64 位 Python 3.12（推荐，支持 3.12–3.14）**，安装时勾选 **Add python.exe to PATH**。
+
+学员从 [GitHub Releases](https://github.com/lxyoutlook/mnist-network-lab/releases/latest) 下载 `mnist-network-lab-windows-v1.0.0.zip`，先完整解压，再双击目录内的 **`start_demo.bat`**。首次启动会在目录内创建 `.venv` 并联网安装依赖，然后自动打开浏览器；后续启动会复用环境。运行期间保持启动窗口开启，结束时在窗口按 Ctrl+C。
+
+ZIP 已包含 12×12 和 28×28 两套模型，不需要另行下载模型、安装 Excel 或 Git。ZIP 不包含 Python 解释器和依赖安装包，首次运行仍需上述 Python 环境和网络。请先解压，不要直接在压缩包内打开 `.bat`。旧入口 `start_demo.cmd` 仍可使用。
 
 手动启动（Windows / macOS / Linux）：
 
