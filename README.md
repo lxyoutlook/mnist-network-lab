@@ -85,12 +85,11 @@ node tests/test_mnist28_js.cjs
 - `data/model.json`、`data/mnist28.json`：原始权重、来源和相关元数据。
 - `data/excel_reference.json`：原 Excel 保存值，基准输入为空白。
 - `data/mnist28_samples.json`、`data/mnist28_reference.json`：20 张 MNIST 原始样本及原权重逐层数值基准，仅用于开发验证，不在应用启动时加载。
-- `tests/fixtures/freehand_regressions.json`：从两张用户截图近似恢复的 6 / 9 输入及适配结果；颜色取整会造成灰度误差，不是原始输入文件。
 - `tools/`：参数提取、导入和留出集复测工具。
 
 20 张验证样本每个数字两张，按留出集次序取最先出现者，没有按识别结果挑选。数据来自 [Keras MNIST](https://github.com/keras-team/keras/blob/master/keras/src/datasets/mnist.py)，作者为 Yann LeCun、Corinna Cortes，遵循其注明的 [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)。
 
-现有检查覆盖 Excel 数值基准、全部灰度样本的逐层数值、独立标量求和、非法输入、Softmax 稳定性、灰度画笔、橡皮、居中处理、6 / 9 回归和 Streamlit 启动。测试数据、固定索引及许可证保留，以便核验来源与计算。
+现有检查覆盖 Excel 数值基准、全部灰度样本的逐层数值、独立标量求和、非法输入、Softmax 稳定性、灰度画笔、橡皮、居中处理和 Streamlit 启动。测试数据、固定索引及许可证保留，以便核验来源与计算。
 
 ## 解释边界
 
