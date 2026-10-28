@@ -22,6 +22,22 @@ python -m streamlit run app.py
 
 `python bootstrap.py --check` 可准备环境并验证两套模型，不启动页面。
 
+## Cloudflare 网页版
+
+[打开在线演示](https://mnist-network-lab.linxiaoyin.workers.dev/)。打开链接即可使用两种画板，无需安装 Python。
+
+浏览器独立版复用 `frontend/` 中的原计算引擎、画板、矩阵和动画，以及两套原始权重。网页运行时不需要 Python 或 Streamlit；Python 独立复算仍用于开发测试，部署后不向服务器发送笔画。
+
+```sh
+python tools/build_static.py
+# 本地预览（在浏览器打开 http://localhost:8524）
+python -m http.server 8524 --directory dist --bind 127.0.0.1
+# 登录自己的 Cloudflare 账号后部署
+npx wrangler deploy
+```
+
+构建只使用 Python 标准库，输出到 `dist/`。`wrangler.jsonc` 将其配置为纯静态资源，无服务端推理、数据库或付费绑定。也可在 Cloudflare 控制台上传 `dist/` 的内容；上传用 ZIP 的根目录应直接包含 `index.html`。静态部署包只包含页面、两套模型和模型许可证；开发验证样本不随网页发布。`web/standalone.js` 负责加载模型和接入原组件消息接口。
+
 ## 演示内容
 
 | 标签 | 输入与结构 | 展示内容 |
